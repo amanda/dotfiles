@@ -7,6 +7,8 @@ export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 # color grep
 export GREP_OPTIONS='--color=auto'
 
+alias weather='python ~/Dropbox/amanda/projects/python/weatherchecker/weatherchecker.py'
+
 cd ~/Dropbox/amanda/projects
 
 echo "      |\_/|                  "

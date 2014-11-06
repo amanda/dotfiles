@@ -13,6 +13,12 @@ alias gs='git status'
 alias ga='git add'
 alias gcm='git commit -m'
 
+export EDITOR='subl -w'
+
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
+fi
+
 cd ~/Dropbox/amanda/projects
 
 echo "      |\_/|                  "

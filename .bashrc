@@ -1,7 +1,6 @@
 # export PS1="\[\033[1;35m\]\u\[\033[0m\]:\[\033[1;35m\]\w\[\033[0m\]\$(__git_ps1 '(%s)') 🔮  $ "
 export PS1="\[\033[1;35m\]\w\[\033[0m\]\$(__git_ps1 '(%s)') 🔮  $ "
 
-
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
   . $(brew --prefix)/etc/bash_completion
 fi
@@ -13,7 +12,7 @@ export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 # color grep
 export GREP_OPTIONS='--color=auto'
 
-# sublime
+# editor
 export EDITOR='atom'
 
 # virtualenvwrapper
@@ -28,8 +27,13 @@ export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:/usr/local/sbin
 
 # android
-export ANDROID_HOME="/Users/<your_user_name_here>/Library/Android/sdk"
+export ANDROID_HOME="/Users/amp/Library/Android/sdk"
 export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+
+# go go go
+export GOPATH=$HOME/Dropbox/go
+export GOBIN=$GOPATH/bin
+export PATH=$PATH:$GOBIN
 
 # my crap
 alias weather='python ~/Dropbox/amanda/projects/python/weatherchecker.py'
@@ -39,6 +43,7 @@ alias twittercreds='cat ~/.twurlrc'
 alias ccat='pygmentize -g'
 alias startdockervm='docker-machine start default'
 alias stopdockervm='docker-machine stop default'
+alias sourcebash='source ~/.bashrc'
 
 # git!
 alias gs='git status'
@@ -60,4 +65,5 @@ echo " /_/_____/____/_______|  "
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
+# fuzzy find
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash

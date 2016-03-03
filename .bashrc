@@ -1,9 +1,11 @@
-# export PS1="\[\033[1;35m\]\u\[\033[0m\]:\[\033[1;35m\]\w\[\033[0m\]\$(__git_ps1 '(%s)') 🔮  $ "
 export PS1="\[\033[1;35m\]\w\[\033[0m\]\$(__git_ps1 '(%s)') 🔮  $ "
 
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
   . $(brew --prefix)/etc/bash_completion
 fi
+
+# why?
+source /usr/local/etc/bash_completion.d/git-prompt.sh
 
 # color
 export CLICOLOR=1
@@ -13,7 +15,7 @@ export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 export GREP_OPTIONS='--color=auto'
 
 # editor
-export EDITOR='atom'
+export EDITOR='atom -w'
 
 # virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
@@ -31,7 +33,7 @@ export ANDROID_HOME="/Users/amp/Library/Android/sdk"
 export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 
 # go go go
-export GOPATH=$HOME/Dropbox/go
+export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOBIN
 
@@ -44,6 +46,7 @@ alias ccat='pygmentize -g'
 alias startdockervm='docker-machine start default'
 alias stopdockervm='docker-machine stop default'
 alias sourcebash='source ~/.bashrc'
+alias upgo='cd ~/go/src/github.com/uplevel-technology'
 
 # git!
 alias gs='git status'
@@ -54,13 +57,9 @@ alias glol="git log --all --color --graph --pretty=format:'%Cred%h%Creset%x09%C(
 
 alias ls='ls -lah'
 
-echo "      |\_/|                  "
-echo "      | @ @   Woof! "
-echo "      |   <>              _  "
-echo "      |  _/\------____ ((| |))"
-echo "      |               \`--' |"
-echo "  ____|_       ___|   |___.'"
-echo " /_/_____/____/_______|  "
+echo " .    .   *       *   "
+echo "   *       .   )    ."
+echo "   .        .   "
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"

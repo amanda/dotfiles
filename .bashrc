@@ -1,10 +1,9 @@
-export PS1="\[\033[1;35m\]\w\[\033[0m\]\$(__git_ps1 '(%s)') 🔮  $ "
+export PS1="\[\033[1;35m\]\W\[\033[0m\]\$(__git_ps1 '(%s)') 🔮  $ "
 
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
   . $(brew --prefix)/etc/bash_completion
 fi
 
-# why?
 source /usr/local/etc/bash_completion.d/git-prompt.sh
 
 # color
@@ -21,21 +20,18 @@ export EDITOR='atom -w'
 export WORKON_HOME=$HOME/.virtualenvs
 source /usr/local/bin/virtualenvwrapper.sh
 
-# PATH madness
 export PATH=/usr/local/bin:$PATH
 export PATH="$PATH":~/bin
 export PATH=~/.local/bin:$PATH
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:/usr/local/sbin
 
+# lua/torch/rnn stuff
+export PATH=$PATH:/Users/amp/torch/install/bin
+
 # android
 export ANDROID_HOME="/Users/amp/Library/Android/sdk"
 export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
-
-# go go go
-export GOPATH=$HOME/go
-export GOBIN=$GOPATH/bin
-export PATH=$PATH:$GOBIN
 
 # my crap
 alias weather='python ~/Dropbox/amanda/projects/python/weatherchecker.py'
@@ -43,10 +39,8 @@ alias note='python ~/Dropbox/amanda/projects/python/python_scratchbook/journalin
 alias chrome='open -a /Applications/Google\ Chrome.app/'
 alias twittercreds='cat ~/.twurlrc'
 alias ccat='pygmentize -g'
-alias startdockervm='docker-machine start default'
-alias stopdockervm='docker-machine stop default'
 alias sourcebash='source ~/.bashrc'
-alias upgo='cd ~/go/src/github.com/uplevel-technology'
+alias gitclean='git branch --merged master | grep -v master | xargs -n 1 git branch -d'
 
 # git!
 alias gs='git status'
@@ -66,3 +60,17 @@ export PATH="/usr/local/heroku/bin:$PATH"
 
 # fuzzy find
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# deploy to npm (`npm version &&`)
+alias yay!='git push origin master && git push --tags && npm publish'
+
+# for work
+nvm use v6.10.2
+
+
+# . /Users/amp/torch/install/bin/torch-activate

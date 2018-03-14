@@ -47,7 +47,7 @@ alias gs='git status'
 alias ga='git add'
 alias gcm='git commit -m'
 alias gpom='git push origin master'
-alias glol="git log --all --color --graph --pretty=format:'%Cred%h%Creset%x09%C(yellow)%d%Creset %s %C(cyan)(%cr) %C(blue)[%an]%Creset' --abbrev-commit"
+alias glol="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 
 alias ls='ls -lah'
 
@@ -66,10 +66,26 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# deploy to npm (`npm version &&`)
+# deploy to npm (after `npm version`)
 alias yay!='git push origin master && git push --tags && npm publish'
 
-# for work
+# scripto
+alias scripto='cd src/scripto/node_modules/@scriptollc'
+export PGHOST=localhost
+export PGUSER=scripto
+export PGDATABASE=showrunner
+export ESHOST=localhost:9200
+export ESINDEX=showrunner
+export REDIS_HOST=localhost
+export REDIS_PORT=6379
+export PORT=3000
+export SHOWRUNNER_URL=http://localhost:$PORT
+export USER_SERVICE
+export SCRIPT_SERVICE=http://localhost:$PORT
+export CARD_SERVICE=http://localhost:$PORT
+export RUNDOWN_SERVICE=http://localhost:$PORT
+export SEARCH_SERVICE=http://localhost:$PORT
+
 nvm use v6.10.2
 
 
